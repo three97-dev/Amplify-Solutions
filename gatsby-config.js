@@ -17,7 +17,7 @@ if (!spaceId || !accessToken) {
 }
 
 // Used for pages header and seo links
-const siteUrl = `https://example.com`;
+const siteUrl = `https://www.amplify-solutions.ca`;
 
 console.log("process.env.HUBSPOT_API_KEY", process.env.HUBSPOT_API_KEY);
 
@@ -25,6 +25,7 @@ module.exports = {
   siteMetadata: {
     title: `Amplify`,
     description: `Amplify description`,
+    image: `/logo.png`,
     siteUrl,
   },
   plugins: [

@@ -9,12 +9,15 @@ const Seo = ({ description, meta, keywords = [], title }) => {
         siteMetadata {
           title
           description
+          image
+          siteUrl
         }
       }
     }
   `);
   const metaTitle = title || site.siteMetadata.title;
   const metaDescription = description; // ignore config file desc for now - || site.siteMetadata.description;
+  const metaImage = site.siteMetadata.siteUrl + site.siteMetadata.image;
 
   return (
     <Helmet
@@ -36,6 +39,10 @@ const Seo = ({ description, meta, keywords = [], title }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: metaImage,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -46,6 +53,10 @@ const Seo = ({ description, meta, keywords = [], title }) => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage,
         },
       ]
         .concat(
