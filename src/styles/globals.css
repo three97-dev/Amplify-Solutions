@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+body {
+  font-family: "Work Sans", sans-serif;
+  @apply text-[14px] leading-[18px] font-normal text-dark-blue;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  @apply text-[32px] md:text-[52px] leading-[38px] md:leading-[66px] font-medium;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  @apply text-[28px] md:text-[38px] leading-[34px] md:leading-[46px] font-medium;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  @apply text-[24px] md:text-[28px] leading-[29px] md:leading-[34px] font-medium;
+}
+
+h4 {
+  @apply text-[20px] leading-[26px] font-normal;
+}
+
+p {
+  font-family: "Work Sans", sans-serif;
+  @apply text-[14px] md:text-[16px] leading-[18px] md:leading-[21px] font-normal;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-sans {
+  font-family: "Work Sans", sans-serif;
+}
+
+.whitespace-break-spaces {
+  white-space: break-spaces;
+}

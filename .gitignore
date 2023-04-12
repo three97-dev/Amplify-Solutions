@@ -1,0 +1,17 @@
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build directory
+/public
+.env*
+# macOS
+.DS_Store
+
+# deployment-specific configs
+now.json
+.env.development
+
+# Local Netlify folder
+.netlify
