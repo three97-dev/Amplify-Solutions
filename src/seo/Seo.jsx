@@ -90,6 +90,9 @@ const Seo = ({ description, meta, keywords = [], title }) => {
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+      {/* Start of HubSpot Embed Code */}
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23846878.js"></script>
+      {/* End of HubSpot Embed Code */}
     </Helmet>
   );
 };

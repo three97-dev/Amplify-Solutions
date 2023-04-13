@@ -46,15 +46,21 @@ const Footer = () => {
           <div className="w-[138px] shrink-0">
             <div className="text-[16px] md:text-[14px] uppercase">{data.socialsLabel}</div>
             <div className="grid grid-cols-3 gap-x-[37px] mt-[24px] md:mt-6">
-              <a href={data.linkedinLink}>
-                <img src={LinkedInIcon} alt="LinkedIn icon" />
-              </a>
-              <a href={data.facebookLink}>
-                <img src={FacebookIcon} alt="Facebook icon" />
-              </a>
-              <a href={data.instagramLink}>
-                <img src={InstagramIcon} alt="Instagram icon" />
-              </a>
+              {data.linkedinLink !== "none" && (
+                <a href={data.linkedinLink}>
+                  <img src={LinkedInIcon} alt="LinkedIn icon" />
+                </a>
+              )}
+              {data.facebookLink !== "none" && (
+                <a href={data.facebookLink}>
+                  <img src={FacebookIcon} alt="Facebook icon" />
+                </a>
+              )}
+              {data.instagramLink !== "none" && (
+                <a href={data.instagramLink}>
+                  <img src={InstagramIcon} alt="Instagram icon" />
+                </a>
+              )}
             </div>
           </div>
           <div className="flex flex-col sm:mr-5 lg:mr-0 text-[16px] leading-[21px] uppercase">
