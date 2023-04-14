@@ -47,7 +47,9 @@ const HeroSection = ({ title, subtitle, buttonLabel, hubspotForm }) => {
       await submitForm(hubspotForm.guid, payload, Date.now(), true);
 
       if (typeof window !== "undefined" && hubspotForm.redirect) {
-        window.open(hubspotForm.redirect, "_blank", "noopener,noreferrer");
+        const redirectUrl = `${hubspotForm.redirect}?firstName=${values.firstName}&lastName=${values.lastName}&email=${values.email}`;
+
+        window.open(redirectUrl, "_blank", "noopener,noreferrer");
       }
 
       setSubmitting(false);

@@ -38,7 +38,11 @@ const BookFormSection = ({ title, subtitle, buttonLabel, hubspotForm }) => {
       await submitForm(hubspotForm.guid, values, Date.now(), true);
 
       if (typeof window !== "undefined" && hubspotForm.redirect) {
-        window.open(hubspotForm.redirect, "_blank", "noopener,noreferrer");
+        let [firstName, ...lastName] = values.firstname.split(" ");
+        lastName = lastName.join(" ") || "-";
+        const redirectUrl = `${hubspotForm.redirect}?firstName=${firstName}&lastName=${lastName}&email=${values.email}`;
+
+        window.open(redirectUrl, "_blank", "noopener,noreferrer");
       }
 
       setSubmitting(false);
