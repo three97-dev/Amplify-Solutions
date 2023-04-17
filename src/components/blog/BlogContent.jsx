@@ -6,6 +6,14 @@ import RRichtext from "../RichtextRenderer";
 
 import clockIcon from "../../assets/blog/clock.svg";
 
+const blogRendererConfig = {
+  bold: "font-semibold",
+  h2: "mt-[50px] md:mt-[44px] mb-6",
+  h3: "!text-[28px] md:!text-[32px] !leading-[120%] mt-[50px] md:mt-[44px] mb-[18px] md:mb-4",
+  h4: "!text-[18px] !leading-[22px] !font-medium font-poppins mt-5 mb-6",
+  p: "!text-[16px] !leading-[21px]",
+};
+
 const BlogContent = ({ title, image, postingDate, minutesToRead, minutesToReadLabel, intro, content }) => {
   return (
     <Container>
@@ -24,18 +32,12 @@ const BlogContent = ({ title, image, postingDate, minutesToRead, minutesToReadLa
               </h4>
             </div>
             <h2 className="!text-[28px] md:!text-[38px] !leading-[120%] lg:max-w-[433px] mt-[29px] md:mt-6">{title}</h2>
-            <RRichtext config={{ p: "!text-[16px] !leading-[21px]" }} data={intro} className="mt-4" />
+            <RRichtext config={blogRendererConfig} data={intro} className="mt-4" />
           </div>
         </div>
         <RRichtext
           data={content}
-          config={{
-            bold: "font-semibold",
-            h2: "mt-[50px] md:mt-[44px] mb-6",
-            h3: "!text-[28px] md:!text-[32px] !leading-[120%] mt-[50px] md:mt-[44px] mb-[18px] md:mb-4",
-            h4: "!text-[18px] !leading-[22px] !font-medium font-poppins mt-5 mb-6",
-            p: "!text-[16px] !leading-[21px]",
-          }}
+          config={blogRendererConfig}
           className="mt-[50px] lg:mt-[56px]"
         />
       </div>
