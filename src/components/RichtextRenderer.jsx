@@ -1,6 +1,7 @@
 import React from "react";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Text = ({ data, config, className }) => {
   if (!data) {
@@ -9,7 +10,7 @@ const Text = ({ data, config, className }) => {
 
   const options = {
     renderMark: {
-      [MARKS.BOLD]: (text) => <span className={`text-red-primary ${config?.bold || ""}`}>{text}</span>,
+      [MARKS.BOLD]: (text) => <span className={`${config?.bold || "text-red-primary"}`}>{text}</span>,
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <p className={`whitespace-pre-wrap ${config?.p || ""}`}>{children}</p>,
@@ -20,12 +21,36 @@ const Text = ({ data, config, className }) => {
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className={`list-disc ml-6 space-y-[21px] md:space-y-0 ${config?.ul || ""}`}>{children}</ul>
       ),
-      [INLINES.HYPERLINK]: (node) => {
-        const { content, data } = node;
+      [BLOCKS.OL_LIST]: (node, children) => (
+        <ol className={`list-decimal ml-6 space-y-[21px] md:space-y-0 ${config?.ol || ""}`}>{children}</ol>
+      ),
+      [INLINES.HYPERLINK]: (node, children) => {
+        return (
+          <a className="cursor-pointer underline" href={node.data.uri} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        );
+      },
+      [BLOCKS.HR]: () => <hr className="my-5 border-t border-dark-blue" />,
+
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { gatsbyImageData } = node.data.target
+        if (!gatsbyImageData) {
+          // asset is not an image
+          return null
+        }
 
         return (
-          <a className="cursor-pointer underline" href={data.uri} target="_blank" rel="noreferrer">
-            {content[0].value}
+          <div className="flex justify-center">
+            <GatsbyImage className="mb-10 lg:mb-12" image={gatsbyImageData} />
+          </div>
+        );
+      },
+
+      [INLINES.ASSET_HYPERLINK]: (node, children) => {
+        return (
+          <a className="cursor-pointer underline" href={node.data.target.url} target="_blank" rel="noreferrer">
+            {children}
           </a>
         );
       },
