@@ -14,16 +14,17 @@ const blogRendererConfig = {
   p: "!text-[16px] !leading-[21px]",
 };
 
-const BlogContent = ({ title, image, postingDate, minutesToRead, minutesToReadLabel, intro, content }) => {
+const BlogContent = ({ title, image, postingDate, minutesToRead, minutesToReadLabel, content }) => {
   return (
-    <Container>
-      <div className="lg:pt-[48px] pb-[51px] md:pb-[107px] xl:px-[80px]">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(400px,599px)_minmax(450px,553px)] gap-y-12">
-          <div className="h-[256px] sm:h-[456px] -mx-6 md:-mx-16 lg:ml-8 xl:ml-[89px] lg:-mr-16 xl:-mr-[144px]">
+    <Container innerContainerClassName="!px-0">
+      <div className="lg:pt-[48px] pb-[51px] md:pb-[107px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_608px] items-center">
+          <div className="w-full h-full max-h-[456px] sm:max-h-full min-h-[256px] sm:min-h-[356px] md:min-h-[456px]">
             <GatsbyImage image={image?.gatsbyImageData} alt={image?.title} className="w-full h-full" />
           </div>
-          <div className="lg:order-first">
-            <h4 className="lg:mt-[36px]">{postingDate}</h4>
+          <div className="lg:order-first px-6 md:px-16 xl:pl-[144px] py-12 md:py-[72px] bg-light-blue">
+            <h2 className="!text-[28px] md:!text-[38px] !leading-[120%]">{title}</h2>
+            <h4 className="mt-4 lg:mt-6">{postingDate}</h4>
             <div className="flex mt-1">
               <img src={clockIcon} alt="Clock Icon" className="mr-2" />
               <h4 className="uppercase">
@@ -31,14 +32,12 @@ const BlogContent = ({ title, image, postingDate, minutesToRead, minutesToReadLa
                 <span className="ml-2">{minutesToReadLabel}</span>
               </h4>
             </div>
-            <h2 className="!text-[28px] md:!text-[38px] !leading-[120%] lg:max-w-[433px] mt-[29px] md:mt-6">{title}</h2>
-            <RRichtext config={blogRendererConfig} data={intro} className="mt-4" />
           </div>
         </div>
         <RRichtext
           data={content}
           config={blogRendererConfig}
-          className="mt-[50px] lg:mt-[56px]"
+          className="mt-[50px] lg:mt-[56px] px-6 md:px-16 xl:px-[144px]"
         />
       </div>
     </Container>

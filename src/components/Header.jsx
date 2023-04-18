@@ -41,7 +41,7 @@ const Header = () => {
     }
     return (
       <div 
-        className="relative flex mx-[18px] items-center cursor-pointer"
+        className="relative flex mx-[14px] xl:mx-[18px] items-center cursor-pointer"
         onMouseEnter={() => handleMouseEnter()}
         onMouseLeave={() => handleMouseLeave()}
       >
@@ -87,7 +87,7 @@ const Header = () => {
               ) : (
                 <Link
                   to={navLink.url}
-                  className="mx-[18px] last:mr-0 first:ml-0 text-white no-underline relative z-30"
+                  className="mx-[14px] xl:mx-[18px] last:mr-0 first:ml-0 text-white no-underline relative z-30"
                 >
                   {navLink.label}
                 </Link>

@@ -21,7 +21,6 @@ const BlogOpenPage = ({ data }) => {
         postingDate={blogData.postingDate}
         minutesToRead={blogData.minutesToRead}
         minutesToReadLabel={data.contentfulBlogOpenPage.minutesToReadLabel}
-        intro={blogData.intro}
         content={blogData.content}
       />
       <ContactUs
@@ -57,9 +56,6 @@ export const query = graphql`
         }
         postingDate(formatString: "dddd, MMMM DD, YYYY")
         minutesToRead
-        intro {
-          raw
-        }
         content {
           raw
           references {
