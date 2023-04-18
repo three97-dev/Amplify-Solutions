@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-[207px_auto] sm:grid-cols-[180px_auto] gap-y-2.5 self-start">
             {data.navLinks.map((navLink, index) => (
-              <Link key={index} to={navLink.url} className="justify-self-start">
+              <Link key={index} to={navLink.url} className="justify-self-start w-max">
                 {navLink.label}
               </Link>
             ))}

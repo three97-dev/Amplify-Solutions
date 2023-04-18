@@ -51,9 +51,9 @@ const OvercomeObstaclesSection = ({
           </Card>
           <Card title={item2Title} highlight={item2Highlight} text={item2Text}>
             <div className="-mx-1.5 md:mx-0">
-              <Button variant="outline-grey" link={item2ButtonLink} className="mt-6" px="px-[27px] xl:px-[49px]">
+              {/* <Button variant="outline-grey" link={item2ButtonLink} className="mt-6" px="px-[27px] xl:px-[49px]">
                 {item2ButtonLabel}
-              </Button>
+              </Button> */}
             </div>
           </Card>
         </div>
