@@ -34,15 +34,15 @@ const Text = ({ data, config, className }) => {
       [BLOCKS.HR]: () => <hr className="my-5 border-t border-dark-blue" />,
 
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { gatsbyImageData } = node.data.target
+        const { gatsbyImageData, title } = node.data.target;
         if (!gatsbyImageData) {
           // asset is not an image
-          return null
+          return null;
         }
 
         return (
           <div className="flex justify-center">
-            <GatsbyImage className="mb-10 lg:mb-12" image={gatsbyImageData} />
+            <GatsbyImage className="mb-10 lg:mb-12" image={gatsbyImageData} alt={title} />
           </div>
         );
       },

@@ -45,12 +45,17 @@ const Header = () => {
         onMouseEnter={() => handleMouseEnter()}
         onMouseLeave={() => handleMouseLeave()}
       >
-        <Link
-          to={item.url}
+        <div
+          tabIndex="0"
+          onKeyDown={(event) => {
+            if (event.key === "Enter"){
+              setIsHoverOpen(!isHoverOpen)
+            }
+          }}
           className={`${isHoverOpen ? 'text-red-primary relative  z-[999]': 'last:mr-0 first:ml-0 text-white'}`}
         >
           {item.label}
-        </Link>
+        </div>
         {!isHoverOpen && <img src={ArrowShow} alt="ArrowShow" className="w-[14px] h-[7px] ml-[7px] mt-[1px]"/>}
         {isHoverOpen && <img src={ArrowHide} alt="ArrowHide" className="w-[14px] h-[7px] ml-[7px] mt-[1px] relative z-[999]"/>}
         {isHoverOpen && (
@@ -60,8 +65,8 @@ const Header = () => {
               className="shadow-[0px_4px_16px_rgba(63,142,201,0.46)] w-full"
             >
               <div className="flex pt-[14px] flex-col items-end bg-white h-full pr-[13px] gap-y-[9px] pb-[24px] bg-[url(../images/header-dropdown-background.png)] bg-bottom bg-no-repeat">
-                {item.subItems.map(subItem => (
-                  <Link to={subItem.url} className="text-dark-blue ">{subItem.label}</Link>
+                {item.subItems.map((subItem, index) => (
+                  <Link key={index} to={subItem.url} className="text-dark-blue ">{subItem.label}</Link>
                 ))}
               </div>
             </div>
@@ -109,18 +114,18 @@ const Header = () => {
                 {navLink?.subItems?.length ? (
                   <div className="flex flex-col" onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}>
                     <div className="flex items-center">
-                      <Link
+                      <div
                         className={`${isSubMenuOpen ? 'text-red-primary relative  z-[999]': 'last:mr-0 first:ml-0 text-white'}`}
                       >
                         {navLink.label}
-                      </Link>
+                      </div>
                       {!isSubMenuOpen && <img src={ArrowShow} alt="ArrowShow" className="w-[14px] h-[7px] ml-[7px]"/>}
                       {isSubMenuOpen && <img src={ArrowHide} alt="ArrowHide" className="w-[14px] h-[7px] ml-[7px] relative z-[999]"/>}
                     </div>
                     {isSubMenuOpen && (
                       <div className="flex flex-col items-end gap-y-[12px] pt-[12px]">
-                        {navLink.subItems.map(subItem => (
-                          <Link to={subItem.url} className="text-white ">{subItem.label}</Link>
+                        {navLink.subItems.map((subItem, index) => (
+                          <Link key={index} to={subItem.url} className="text-white ">{subItem.label}</Link>
                         ))}
                       </div>
                     )}

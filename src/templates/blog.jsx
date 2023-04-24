@@ -62,6 +62,7 @@ export const query = graphql`
             ... on ContentfulAsset {
               contentful_id
               __typename
+              title
               gatsbyImageData
             }
             url

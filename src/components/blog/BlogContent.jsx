@@ -11,7 +11,7 @@ const blogRendererConfig = {
   h2: "mt-[50px] md:mt-[44px] mb-6",
   h3: "!text-[28px] md:!text-[32px] !leading-[120%] mt-[50px] md:mt-[44px] mb-[18px] md:mb-4",
   h4: "!text-[18px] !leading-[22px] !font-medium font-poppins mt-5 mb-6",
-  p: "!text-[16px] !leading-[21px]",
+  p: "!text-[16px] !leading-[21px] mb-[21px]",
 };
 
 const BlogContent = ({ title, image, postingDate, minutesToRead, minutesToReadLabel, content }) => {
