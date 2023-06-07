@@ -11,6 +11,7 @@ const Button = ({ link, onClick, children, type, form, disabled, className, px =
           {
             "bg-transparent text-center text-dark-blue border border-blue-secondary": variant === "outline-grey",
             "bg-transparent text-red-primary border border-red-primary": variant === "outline-red",
+            "bg-transparent text-white border border-white": variant === "outline-white",
             "bg-red-primary text-center text-white": !variant,
           },
           className,
@@ -34,6 +35,7 @@ const Button = ({ link, onClick, children, type, form, disabled, className, px =
         {
           "bg-transparent text-dark-blue border border-blue-secondary": variant === "outline-grey",
           "bg-transparent text-red-primary border border-red-primary": variant === "outline-red",
+          "bg-transparent text-white border border-white": variant === "outline-white",
           "bg-red-primary text-white": !variant,
           "opacity-50 cursor-default": disabled,
         },

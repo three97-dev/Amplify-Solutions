@@ -8,6 +8,7 @@ import Hero from "../components/Hero";
 import YouIdentify from "../components/fractional-services/YouIdentify";
 import ExperienceBenefits from "../components/fractional-services/ExperienceBenefits";
 import VisualizeBusiness from "../components/fractional-services/VisualizeBusiness";
+import PricingPlansSection from "../components/pricing/PricingPlansSection";
 import BusinessCaseFormSection from "../components/fractional-services/BusinessCaseFormSection";
 
 const FractionalServicesPage = ({ data }) => {
@@ -17,7 +18,7 @@ const FractionalServicesPage = ({ data }) => {
       <Hero
         title={data.contentfulFractionalServicesPage.heroTitle}
         subtitle={data.contentfulFractionalServicesPage.heroSubtitle.heroSubtitle}
-        buttons={data.contentfulFractionalServicesPage.heroButtons}
+        // buttons={data.contentfulFractionalServicesPage.heroButtons}
         titleClassNames="max-w-[1075px]"
         subtitleClassName="max-w-[884px]"
       />
@@ -43,7 +44,34 @@ const FractionalServicesPage = ({ data }) => {
         text={data.contentfulFractionalServicesPage.visualizeText.visualizeText}
         videoLink={data.contentfulFractionalServicesPage.visualizeVideoLink}
       />
+      <PricingPlansSection
+        basicPlanImage={data.contentfulFractionalServicesPage.basicPlanImage}
+        basicPlanTitle={data.contentfulFractionalServicesPage.basicPlanTitle}
+        basicPlanSubtitle={data.contentfulFractionalServicesPage.basicPlanSubtitle}
+        basicPlanPrice={data.contentfulFractionalServicesPage.basicPlanPrice}
+        basicPlanFeatures={data.contentfulFractionalServicesPage.basicPlanFeatures}
+        basicPlanInfo={data.contentfulFractionalServicesPage.basicPlanInfo}
+        basicPlanButtonLabel={data.contentfulFractionalServicesPage.basicPlanButtonLabel}
+        basicPlanButtonLink={data.contentfulFractionalServicesPage.basicPlanButtonLink}
+        standardPlanImage={data.contentfulFractionalServicesPage.standardPlanImage}
+        standardPlanTitle={data.contentfulFractionalServicesPage.standardPlanTitle}
+        standardPlanSubtitle={data.contentfulFractionalServicesPage.standardPlanSubtitle}
+        standardPlanPrice={data.contentfulFractionalServicesPage.standardPlanPrice}
+        standardPlanFeatures={data.contentfulFractionalServicesPage.standardPlanFeatures}
+        standardPlanInfo={data.contentfulFractionalServicesPage.standardPlanInfo}
+        standardPlanButtonLabel={data.contentfulFractionalServicesPage.standardPlanButtonLabel}
+        standardPlanButtonLink={data.contentfulFractionalServicesPage.standardPlanButtonLink}
+        premiumPlanImage={data.contentfulFractionalServicesPage.premiumPlanImage}
+        premiumPlanTitle={data.contentfulFractionalServicesPage.premiumPlanTitle}
+        premiumPlanSubtitle={data.contentfulFractionalServicesPage.premiumPlanSubtitle}
+        premiumPlanPrice={data.contentfulFractionalServicesPage.premiumPlanPrice}
+        premiumPlanFeatures={data.contentfulFractionalServicesPage.premiumPlanFeatures}
+        premiumPlanInfo={data.contentfulFractionalServicesPage.premiumPlanInfo}
+        premiumPlanButtonLabel={data.contentfulFractionalServicesPage.premiumPlanButtonLabel}
+        premiumPlanButtonLink={data.contentfulFractionalServicesPage.premiumPlanButtonLink}
+      />
       <BusinessCaseFormSection
+        image={data.contentfulFractionalServicesPage.businessCaseFormImage}
         title={data.contentfulFractionalServicesPage.businessCaseFormTitle}
         subtitle={data.contentfulFractionalServicesPage.businessCaseFormSubtitle.businessCaseFormSubtitle}
         buttonLabel={data.contentfulFractionalServicesPage.businessCaseFormButtonLabel}
@@ -98,6 +126,55 @@ export const query = graphql`
         visualizeText
       }
       visualizeVideoLink
+      basicPlanImage {
+        gatsbyImageData(placeholder: NONE)
+        title
+      }
+      basicPlanTitle
+      basicPlanSubtitle
+      basicPlanPrice
+      basicPlanFeatures {
+        content
+      }
+      basicPlanInfo {
+        raw
+      }
+      basicPlanButtonLabel
+      basicPlanButtonLink
+      standardPlanImage {
+        gatsbyImageData(placeholder: NONE)
+        title
+      }
+      standardPlanTitle
+      standardPlanSubtitle
+      standardPlanPrice
+      standardPlanFeatures {
+        content
+      }
+      standardPlanInfo {
+        raw
+      }
+      standardPlanButtonLabel
+      standardPlanButtonLink
+      premiumPlanImage {
+        gatsbyImageData(placeholder: NONE)
+        title
+      }
+      premiumPlanTitle
+      premiumPlanSubtitle
+      premiumPlanPrice
+      premiumPlanFeatures {
+        content
+      }
+      premiumPlanInfo {
+        raw
+      }
+      premiumPlanButtonLabel
+      premiumPlanButtonLink
+      businessCaseFormImage {
+        gatsbyImageData(placeholder: NONE)
+        title
+      }
       businessCaseFormTitle {
         raw
       }

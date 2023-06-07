@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+// import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import Seo from "../seo/Seo";
@@ -77,111 +77,111 @@ const PricingPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  query PricingPageQuery {
-    contentfulPricingPage {
-      heroTitle {
-        raw
-      }
-      heroSubtitle {
-        heroSubtitle
-      }
-      basicPlanImage {
-        gatsbyImageData(placeholder: NONE)
-        title
-      }
-      basicPlanTitle
-      basicPlanSubtitle
-      basicPlanPrice
-      basicPlanFeatures {
-        content
-      }
-      basicPlanInfo {
-        raw
-      }
-      basicPlanButtonLabel
-      basicPlanButtonLink
-      standardPlanImage {
-        gatsbyImageData(placeholder: NONE)
-        title
-      }
-      standardPlanTitle
-      standardPlanSubtitle
-      standardPlanPrice
-      standardPlanFeatures {
-        content
-      }
-      standardPlanInfo {
-        raw
-      }
-      standardPlanButtonLabel
-      standardPlanButtonLink
-      premiumPlanImage {
-        gatsbyImageData(placeholder: NONE)
-        title
-      }
-      premiumPlanTitle
-      premiumPlanSubtitle
-      premiumPlanPrice
-      premiumPlanFeatures {
-        content
-      }
-      premiumPlanInfo {
-        raw
-      }
-      premiumPlanButtonLabel
-      premiumPlanButtonLink
-      whatToExpectTitle {
-        raw
-      }
-      whatToExpectText {
-        whatToExpectText
-      }
-      whatToExpectItem1Title
-      whatToExpectItem1Text {
-        whatToExpectItem1Text
-      }
-      whatToExpectItem2Title
-      whatToExpectItem2Text {
-        whatToExpectItem2Text
-      }
-      whatToExpectItem3Title
-      whatToExpectItem3Text {
-        whatToExpectItem3Text
-      }
-      areasWeSpecializeTitle {
-        raw
-      }
-      areasWeSpecializeItems {
-        content
-      }
-      areasWeSpecializeButtonLabel
-      areasWeSpecializeButtonLink
-      bookFormTitle {
-        raw
-      }
-      bookFormSubtitle {
-        bookFormSubtitle
-      }
-      bookFormButtonLabel
-    }
-    hubspotForm(id: { eq: "c054b02b-db3d-4a63-a2be-c36cec643db9" }) {
-      guid
-      portalId
-      name
-      submitText
-      redirect
-      formFieldGroups {
-        fields {
-          label
-          name
-          required
-          fieldType
-          placeholder
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query PricingPageQuery {
+//     contentfulPricingPage {
+//       heroTitle {
+//         raw
+//       }
+//       heroSubtitle {
+//         heroSubtitle
+//       }
+//       basicPlanImage {
+//         gatsbyImageData(placeholder: NONE)
+//         title
+//       }
+//       basicPlanTitle
+//       basicPlanSubtitle
+//       basicPlanPrice
+//       basicPlanFeatures {
+//         content
+//       }
+//       basicPlanInfo {
+//         raw
+//       }
+//       basicPlanButtonLabel
+//       basicPlanButtonLink
+//       standardPlanImage {
+//         gatsbyImageData(placeholder: NONE)
+//         title
+//       }
+//       standardPlanTitle
+//       standardPlanSubtitle
+//       standardPlanPrice
+//       standardPlanFeatures {
+//         content
+//       }
+//       standardPlanInfo {
+//         raw
+//       }
+//       standardPlanButtonLabel
+//       standardPlanButtonLink
+//       premiumPlanImage {
+//         gatsbyImageData(placeholder: NONE)
+//         title
+//       }
+//       premiumPlanTitle
+//       premiumPlanSubtitle
+//       premiumPlanPrice
+//       premiumPlanFeatures {
+//         content
+//       }
+//       premiumPlanInfo {
+//         raw
+//       }
+//       premiumPlanButtonLabel
+//       premiumPlanButtonLink
+//       whatToExpectTitle {
+//         raw
+//       }
+//       whatToExpectText {
+//         whatToExpectText
+//       }
+//       whatToExpectItem1Title
+//       whatToExpectItem1Text {
+//         whatToExpectItem1Text
+//       }
+//       whatToExpectItem2Title
+//       whatToExpectItem2Text {
+//         whatToExpectItem2Text
+//       }
+//       whatToExpectItem3Title
+//       whatToExpectItem3Text {
+//         whatToExpectItem3Text
+//       }
+//       areasWeSpecializeTitle {
+//         raw
+//       }
+//       areasWeSpecializeItems {
+//         content
+//       }
+//       areasWeSpecializeButtonLabel
+//       areasWeSpecializeButtonLink
+//       bookFormTitle {
+//         raw
+//       }
+//       bookFormSubtitle {
+//         bookFormSubtitle
+//       }
+//       bookFormButtonLabel
+//     }
+//     hubspotForm(id: { eq: "c054b02b-db3d-4a63-a2be-c36cec643db9" }) {
+//       guid
+//       portalId
+//       name
+//       submitText
+//       redirect
+//       formFieldGroups {
+//         fields {
+//           label
+//           name
+//           required
+//           fieldType
+//           placeholder
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default PricingPage;

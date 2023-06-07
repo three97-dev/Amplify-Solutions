@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -12,7 +12,7 @@ import { submitForm } from "../../utils/submitForm";
 
 import circles5 from "../../assets/background/circles5.svg";
 
-const BusinessCaseFormSection = ({ title, subtitle, buttonLabel, hubspotForm }) => {
+const BusinessCaseFormSection = ({ image, title, subtitle, buttonLabel, hubspotForm }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const formik = useFormik({
@@ -49,18 +49,17 @@ const BusinessCaseFormSection = ({ title, subtitle, buttonLabel, hubspotForm }) 
       />
       <div className="flex flex-col md:flex-row mt-14 md:mt-0">
         <div className="relative flex items-center justify-center w-full md:max-w-[376px] md:mr-4">
-          <StaticImage
-            src="../../images/fractional-services/download-form.png"
-            placeholder="blur"
-            alt="Hero Image"
+          <GatsbyImage
+            image={image?.gatsbyImageData}
+            alt={image?.title}
             layout="fullWidth"
-            objectFit="contain"
+            objectFit="cover"
             quality={100}
-            className="w-full max-w-[360px] px-3 md:px-0 lg:-mr-[60px] shrink-0"
+            className="w-full max-w-[360px] md:px-0 lg:-mr-[60px] shrink-0"
           />
           <div className="absolute w-[210px] md:w-[288px] h-[182px] md:h-[250px] top-1/2 -translate-y-1/2 bg-blue-secondary blur-[60px] opacity-50 -z-10"></div>
         </div>
-        <div className="flex flex-col pt-[94px] pb-[82px] md:py-[72px] md:ml-14 xl:ml-[150px]">
+        <div className="flex flex-col w-full pt-[94px] pb-[82px] md:py-[72px] md:ml-14 xl:ml-[150px]">
           <RRichtext data={title} config={{ h2: "text-[32px] md:text-[38px] leading-[38px] md:leading-[46px]" }} />
           <p className="max-w-[545px] mt-8 md:mt-5 text-dark-blue">{subtitle}</p>
           <form

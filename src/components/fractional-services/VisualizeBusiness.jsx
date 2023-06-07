@@ -6,7 +6,7 @@ import RRichtext from "../RichtextRenderer";
 const VisualizeBusiness = ({ title, text, videoLink }) => {
   return (
     <Container innerContainerClassName="!px-0">
-      <div className="grid grid-cols-1 lg:grid-cols-[minmax(200px,591px)_minmax(200px,676px)] gap-x-[43px] items-center py-[104px] lg:px-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(200px,591px)_minmax(200px,676px)] gap-x-[43px] items-center pt-[104px] pb-[170px] lg:px-16">
         <div className="lg:ml-[46px] px-6 lg:px-0">
           <RRichtext data={title} config={{ h2: "text-[32px] md:text-[38px] leading-[120%] [&_span]:inline-block" }} />
           <p className="mt-5 lg:mt-8">{text}</p>

@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import Seo from "../seo/Seo";
 
 import Hero from "../components/Hero";
-import ContactUs from "../components/blog/ContactUs";
+import ContactUs from "../components/common/ContactUs";
 import BlogsListSection from "../components/blog/BlogsListSection";
 
 const BlogPage = ({ data }) => {

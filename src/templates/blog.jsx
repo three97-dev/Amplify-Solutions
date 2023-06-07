@@ -6,7 +6,7 @@ import Seo from "../seo/Seo";
 
 import Hero from "../components/blog/Hero";
 import BlogContent from "../components/blog/BlogContent";
-import ContactUs from "../components/blog/ContactUs";
+import ContactUs from "../components/common/ContactUs";
 
 const BlogOpenPage = ({ data }) => {
   const blogData = data.allContentfulBlog.nodes[0];

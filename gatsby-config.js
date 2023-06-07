@@ -34,7 +34,7 @@ module.exports = {
       options: contentfulConfig,
     },
     {
-      resolve: 'gatsby-source-hubspot-forms',
+      resolve: "gatsby-source-hubspot-forms",
       options: {
         apiKey: process.env.HUBSPOT_API_KEY,
       },
@@ -66,6 +66,13 @@ module.exports = {
         purgeCSSOptions: {
           safelist: [/Dropdown/, "is-open", "is-selected", /slick/], // Don't remove this selectors
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: ["pricing.(js|ts)?(x)"],
       },
     },
   ],
