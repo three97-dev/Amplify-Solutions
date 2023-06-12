@@ -12,6 +12,8 @@ import MoreBenefitsSection from "../components/crm-implementation/MoreBenefitsSe
 import IncludedSection from "../components/crm-implementation/IncludedSection";
 import PricingSection from "../components/crm-implementation/PricingSection";
 import PricingSectionMobile from "../components/crm-implementation/PricingSectionMobile";
+import LicensingSection from "../components/crm-implementation/LicensingSection";
+import LicensingSectionMobile from "../components/crm-implementation/LicensingSectionMobile";
 
 import { useApplyAfterWidth } from "../utils/hooks";
 
@@ -60,51 +62,69 @@ const AmplifyYourCrmPage = ({ data }) => {
         item6Text={data.contentfulCrmImplementationPage.includedItem6Text}
       />
       {isDesktop ? (
-        <PricingSection
-          title={data.contentfulCrmImplementationPage.pricingTitle}
-          subtitle={data.contentfulCrmImplementationPage.pricingSubtitle}
-          walkIcon={data.contentfulCrmImplementationPage.pricingWalkIcon}
-          walkTitle={data.contentfulCrmImplementationPage.pricingWalkTitle}
-          walkPrice={data.contentfulCrmImplementationPage.pricingWalkPrice}
-          walkButtonLabel={data.contentfulCrmImplementationPage.pricingWalkButtonLabel}
-          walkButtonLink={data.contentfulCrmImplementationPage.pricingWalkButtonLink}
-          runIcon={data.contentfulCrmImplementationPage.pricingRunIcon}
-          runTitle={data.contentfulCrmImplementationPage.pricingRunTitle}
-          runPrice={data.contentfulCrmImplementationPage.pricingRunPrice}
-          runButtonLabel={data.contentfulCrmImplementationPage.pricingRunButtonLabel}
-          runButtonLink={data.contentfulCrmImplementationPage.pricingRunButtonLink}
-          sprintIcon={data.contentfulCrmImplementationPage.pricingSprintIcon}
-          sprintTitle={data.contentfulCrmImplementationPage.pricingSprintTitle}
-          sprintPrice={data.contentfulCrmImplementationPage.pricingSprintPrice}
-          sprintButtonLabel={data.contentfulCrmImplementationPage.pricingSprintButtonLabel}
-          sprintButtonLink={data.contentfulCrmImplementationPage.pricingSprintButtonLink}
-          features={data.contentfulCrmImplementationPage.pricingFeatures}
-          notes={data.contentfulCrmImplementationPage.pricingNotes}
-          info={data.contentfulCrmImplementationPage.pricingInfo}
-        />
+        <>
+          <PricingSection
+            title={data.contentfulCrmImplementationPage.pricingTitle}
+            subtitle={data.contentfulCrmImplementationPage.pricingSubtitle}
+            walkIcon={data.contentfulCrmImplementationPage.pricingWalkIcon}
+            walkTitle={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].title}
+            walkPrice={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].price}
+            walkButtonLabel={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].buttonLabel}
+            walkButtonLink={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].buttonLink}
+            runIcon={data.contentfulCrmImplementationPage.pricingRunIcon}
+            runTitle={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].title}
+            runPrice={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].price}
+            runButtonLabel={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].buttonLabel}
+            runButtonLink={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].buttonLink}
+            sprintIcon={data.contentfulCrmImplementationPage.pricingSprintIcon}
+            sprintTitle={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].title}
+            sprintPrice={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].price}
+            sprintButtonLabel={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].buttonLabel}
+            sprintButtonLink={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].buttonLink}
+            features={data.contentfulCrmImplementationPage.pricingFeatures.rows}
+            notes={data.contentfulCrmImplementationPage.pricingNotes}
+          />
+          <LicensingSection
+            title={data.contentfulCrmImplementationPage.licensingTitle}
+            subtitle={data.contentfulCrmImplementationPage.licensingSubtitle}
+            column1Title={data.contentfulCrmImplementationPage.licensingData.columns[0].title}
+            column2Title={data.contentfulCrmImplementationPage.licensingData.columns[1].title}
+            column3Title={data.contentfulCrmImplementationPage.licensingData.columns[2].title}
+            rows={data.contentfulCrmImplementationPage.licensingData.rows}
+          />
+        </>
       ) : (
-        <PricingSectionMobile
-          title={data.contentfulCrmImplementationPage.pricingTitle}
-          subtitle={data.contentfulCrmImplementationPage.pricingSubtitle}
-          walkIcon={data.contentfulCrmImplementationPage.pricingWalkIcon}
-          walkTitle={data.contentfulCrmImplementationPage.pricingWalkTitle}
-          walkPrice={data.contentfulCrmImplementationPage.pricingWalkPrice}
-          walkButtonLabel={data.contentfulCrmImplementationPage.pricingWalkButtonLabel}
-          walkButtonLink={data.contentfulCrmImplementationPage.pricingWalkButtonLink}
-          runIcon={data.contentfulCrmImplementationPage.pricingRunIcon}
-          runTitle={data.contentfulCrmImplementationPage.pricingRunTitle}
-          runPrice={data.contentfulCrmImplementationPage.pricingRunPrice}
-          runButtonLabel={data.contentfulCrmImplementationPage.pricingRunButtonLabel}
-          runButtonLink={data.contentfulCrmImplementationPage.pricingRunButtonLink}
-          sprintIcon={data.contentfulCrmImplementationPage.pricingSprintIcon}
-          sprintTitle={data.contentfulCrmImplementationPage.pricingSprintTitle}
-          sprintPrice={data.contentfulCrmImplementationPage.pricingSprintPrice}
-          sprintButtonLabel={data.contentfulCrmImplementationPage.pricingSprintButtonLabel}
-          sprintButtonLink={data.contentfulCrmImplementationPage.pricingSprintButtonLink}
-          features={data.contentfulCrmImplementationPage.pricingFeatures}
-          notes={data.contentfulCrmImplementationPage.pricingNotes}
-          info={data.contentfulCrmImplementationPage.pricingInfo}
-        />
+        <>
+          <PricingSectionMobile
+            title={data.contentfulCrmImplementationPage.pricingTitle}
+            subtitle={data.contentfulCrmImplementationPage.pricingSubtitle}
+            walkIcon={data.contentfulCrmImplementationPage.pricingWalkIcon}
+            walkTitle={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].title}
+            walkPrice={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].price}
+            walkButtonLabel={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].buttonLabel}
+            walkButtonLink={data.contentfulCrmImplementationPage.pricingFeatures.columns[0].buttonLink}
+            runIcon={data.contentfulCrmImplementationPage.pricingRunIcon}
+            runTitle={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].title}
+            runPrice={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].price}
+            runButtonLabel={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].buttonLabel}
+            runButtonLink={data.contentfulCrmImplementationPage.pricingFeatures.columns[1].buttonLink}
+            sprintIcon={data.contentfulCrmImplementationPage.pricingSprintIcon}
+            sprintTitle={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].title}
+            sprintPrice={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].price}
+            sprintButtonLabel={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].buttonLabel}
+            sprintButtonLink={data.contentfulCrmImplementationPage.pricingFeatures.columns[2].buttonLink}
+            features={data.contentfulCrmImplementationPage.pricingFeatures.rows}
+            notes={data.contentfulCrmImplementationPage.pricingNotes}
+          />
+          <LicensingSectionMobile
+            title={data.contentfulCrmImplementationPage.licensingTitle}
+            subtitle={data.contentfulCrmImplementationPage.licensingSubtitle}
+            column1Title={data.contentfulCrmImplementationPage.licensingData.columns[0].title}
+            column2Title={data.contentfulCrmImplementationPage.licensingData.columns[1].title}
+            column3Title={data.contentfulCrmImplementationPage.licensingData.columns[2].title}
+            rows={data.contentfulCrmImplementationPage.licensingData.rows}
+          />
+        </>
       )}
       <ContactUs
         title={data.contentfulCrmImplementationPage.contactUsTitle}
@@ -204,41 +224,51 @@ export const query = graphql`
         }
         title
       }
-      pricingWalkTitle
-      pricingWalkPrice
-      pricingWalkButtonLabel
-      pricingWalkButtonLink
       pricingRunIcon {
         file {
           url
         }
         title
       }
-      pricingRunTitle
-      pricingRunPrice
-      pricingRunButtonLabel
-      pricingRunButtonLink
       pricingSprintIcon {
         file {
           url
         }
         title
       }
-      pricingSprintTitle
-      pricingSprintPrice
-      pricingSprintButtonLabel
-      pricingSprintButtonLink
       pricingFeatures {
-        label
-        walk
-        run
-        sprint
+        columns {
+          title
+          price
+          buttonLabel
+          buttonLink
+        }
+        rows {
+          label
+          walk
+          run
+          sprint
+        }
       }
       pricingNotes {
         raw
       }
-      pricingInfo {
+      licensingTitle {
         raw
+      }
+      licensingSubtitle {
+        raw
+      }
+      licensingData {
+        columns {
+          title
+        }
+        rows {
+          label
+          light
+          professional
+          enterprise
+        }
       }
       contactUsTitle {
         raw

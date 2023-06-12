@@ -75,11 +75,10 @@ const PricingSectionMobile = ({
   sprintButtonLink,
   features,
   notes,
-  info,
 }) => {
   return (
     <Container>
-      <div className="py-20">
+      <div className="pt-20 pb-10">
         <RRichtext data={title} config={{ h2: "text-[32px] md:text-[38px] leading-[120%]" }} />
         <RRichtext data={subtitle} config={{ h3: "text-[22px] leading-[29px]" }} className="mt-4" />
         <div className="grid grid-cols-3 gap-x-2 sm:gap-x-3 py-10">
@@ -134,9 +133,8 @@ const PricingSectionMobile = ({
             </div>
           </div>
         ))}
-        <RRichtext data={notes} className="mt-7" />
-        <div className="w-full py-7 mt-7 border-y border-blue-secondary">
-          <RRichtext data={info} config={{ bold: "font-semibold !text-dark-blue" }} />
+        <div className="w-full py-7 border-b border-blue-secondary">
+          <RRichtext data={notes} />
         </div>
       </div>
     </Container>

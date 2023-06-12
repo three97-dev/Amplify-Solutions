@@ -12,7 +12,7 @@ const PricingPlanHeader = ({ icon, title, price, buttonLabel, buttonLink, isHigh
   return (
     <div
       className={classNames(
-        "relative flex flex-col items-center p-[30px] -mb-[10px]",
+        "relative flex flex-col items-center p-4 xl:p-[30px] -mb-[10px]",
         {
           "bg-white text-dark-blue rounded-[10px]": !isHighlighted,
           "bg-red-primary text-white rounded-t-[10px] -mx-[1.5px]": isHighlighted,
@@ -65,11 +65,10 @@ const PricingSection = ({
   sprintButtonLink,
   features,
   notes,
-  info,
 }) => {
   return (
     <Container>
-      <div className="pt-[144px] pb-[92px]">
+      <div className="pt-[144px] pb-[57px]">
         <table className="w-full border-collapse border-spacing-0">
           <thead>
             <tr>
@@ -79,7 +78,7 @@ const PricingSection = ({
                   <RRichtext data={subtitle} config={{ h3: "text-[22px] leading-[29px]" }} className="mt-4" />
                 </div>
               </th>
-              <th className="align-bottom">
+              <th className="align-bottom w-[200px] xl:w-[283px]">
                 <PricingPlanHeader
                   icon={walkIcon}
                   title={walkTitle}
@@ -89,7 +88,7 @@ const PricingSection = ({
                   className="mr-[21px]"
                 />
               </th>
-              <th className="align-bottom p-0">
+              <th className="align-bottom w-[200px] xl:w-[283px] p-0">
                 <PricingPlanHeader
                   icon={runIcon}
                   title={runTitle}
@@ -99,7 +98,7 @@ const PricingSection = ({
                   isHighlighted
                 />
               </th>
-              <th className="align-bottom">
+              <th className="align-bottom w-[200px] xl:w-[283px]">
                 <PricingPlanHeader
                   icon={sprintIcon}
                   title={sprintTitle}
@@ -147,9 +146,8 @@ const PricingSection = ({
             ))}
           </tbody>
         </table>
-        <RRichtext data={notes} className="mt-7" />
-        <div className="w-full py-7 mt-7 border-y border-blue-secondary">
-          <RRichtext data={info} config={{ bold: "font-semibold !text-dark-blue" }} />
+        <div className="w-full py-7 border-b border-blue-secondary">
+          <RRichtext data={notes} />
         </div>
       </div>
     </Container>
