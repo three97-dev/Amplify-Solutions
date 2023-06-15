@@ -13,16 +13,20 @@ const Text = ({ data, config, className }) => {
       [MARKS.BOLD]: (text) => <span className={`${config?.bold || "text-red-primary"}`}>{text}</span>,
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p className={`whitespace-pre-wrap ${config?.p || ""}`}>{children}</p>,
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className={`whitespace-pre-wrap first:mt-0 mt-[18px] md:mt-[21px] ${config?.p || ""}`}>{children}</p>
+      ),
       [BLOCKS.HEADING_1]: (node, children) => <h1 className={`${config?.h1 || ""}`}>{children}</h1>,
       [BLOCKS.HEADING_2]: (node, children) => <h2 className={`${config?.h2 || ""}`}>{children}</h2>,
       [BLOCKS.HEADING_3]: (node, children) => <h3 className={`${config?.h3 || ""}`}>{children}</h3>,
       [BLOCKS.HEADING_4]: (node, children) => <h4 className={`${config?.h4 || ""}`}>{children}</h4>,
       [BLOCKS.UL_LIST]: (node, children) => (
-        <ul className={`list-disc ml-6 space-y-[21px] md:space-y-0 ${config?.ul || ""}`}>{children}</ul>
+        <ul className={`list-disc ml-6 first:mt-0 mt-[18px] md:mt-[21px] space-y-2 ${config?.ul || ""}`}>{children}</ul>
       ),
       [BLOCKS.OL_LIST]: (node, children) => (
-        <ol className={`list-decimal ml-6 space-y-[21px] md:space-y-0 ${config?.ol || ""}`}>{children}</ol>
+        <ol className={`list-decimal ml-6 first:mt-0 mt-[18px] md:mt-[21px] space-y-2 ${config?.ol || ""}`}>
+          {children}
+        </ol>
       ),
       [INLINES.HYPERLINK]: (node, children) => {
         return (
