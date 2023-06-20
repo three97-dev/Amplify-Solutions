@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import { graphql, Link, useStaticQuery } from "gatsby";
 
 import Logo from "../assets/logo.svg";
@@ -20,7 +21,9 @@ const HeaderSubMenuItem = ({ item }) => {
 
   return (
     <div
-      className="relative flex mx-[14px] xl:mx-[18px] items-center cursor-pointer"
+      className={classNames("relative flex h-full mx-[14px] xl:mx-[18px] items-center cursor-pointer", {
+        "z-30": !isHoverOpen,
+      })}
       onMouseEnter={() => handleMouseEnter()}
       onMouseLeave={() => handleMouseLeave()}
     >
@@ -40,7 +43,7 @@ const HeaderSubMenuItem = ({ item }) => {
         <img src={ArrowHide} alt="ArrowHide" className="w-[14px] h-[7px] ml-[7px] mt-[1px] relative z-[999]" />
       )}
       {isHoverOpen && (
-        <div className="absolute w-[268px] z-20 -top-[20px] -left-[163px] ">
+        <div className="absolute w-[268px] z-20 -top-[11px] -right-4">
           <div className="flex justify-end right-[18px]">
             <img className="-mr-[16px]" src={HeaderTab} alt="HeaderTab" />
           </div>
