@@ -93,6 +93,14 @@ const Seo = ({ description, meta, keywords = [], title }) => {
       {/* Start of HubSpot Embed Code */}
       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23846878.js"></script>
       {/* End of HubSpot Embed Code */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-178PL276KH"></script>
+      <script>
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-178PL276KH');`}
+      </script>
     </Helmet>
   );
 };
