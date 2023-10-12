@@ -47,7 +47,7 @@ export const query = graphql`
       contactUsButtonLabel
       contactUsButtonLink
     }
-    allContentfulBlog {
+    allContentfulBlog(sort: { postingDate: DESC }) {
       nodes {
         title
         subtitle
