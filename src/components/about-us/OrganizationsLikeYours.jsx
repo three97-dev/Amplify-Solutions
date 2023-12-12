@@ -23,7 +23,7 @@ const OrganizationsLikeYours = ({ title, text, feature1, feature2, feature3, fea
     <Container>
       <div className="pt-10 md:pt-[70px] pb-[100px] lg:pb-[98px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:items-center gap-y-6 lg:gap-x-16">
-          <div className="">
+          <div>
             <RRichtext data={title} config={{ h1: "whitespace-pre-wrap" }} />
           </div>
           <RRichtext data={text} />

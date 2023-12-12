@@ -7,7 +7,7 @@ import Button from "./basic/Button";
 
 import circles4 from "../assets/background/circles4.svg";
 
-const HeroSection = ({ title, subtitle, buttons, titleClassNames, subtitleClassName }) => {
+const HeroSection = ({ image, title, subtitle, buttons, titleClassNames, subtitleClassName }) => {
   return (
     <Container outerContainerClassName="bg-dark-blue" innerContainerClassName="relative">
       <img src={circles4} alt="Background circles 1" className="hidden md:block absolute top-8 -right-[116px] -z-10" />
@@ -18,6 +18,7 @@ const HeroSection = ({ title, subtitle, buttons, titleClassNames, subtitleClassN
       />
       <div className="flex flex-col text-center md:min-h-[440px] pt-[27px] md:pt-[129px] pb-16">
         <div className="flex flex-col justify-center md:order-first text-white">
+          {image && <img src={image.file.url} alt={image.title} width={257} className="mx-auto pb-8" />}
           <RRenderer
             data={title}
             config={{

@@ -18,7 +18,7 @@ const PricingPlanHeader = ({ icon, title, price, buttonLabel, buttonLink, isHigh
         "bg-red-primary text-white": isHighlighted,
       })}
     >
-      <div className="flex justify-center shrink-0 h-[50px] sm:h-[75px] w-[87px]">
+      <div className="flex justify-center shrink-0 h-14 sm:h-[75px] w-14 sm:w-[75px]">
         <img src={icon.file.url} alt={icon.title} />
       </div>
       <h3

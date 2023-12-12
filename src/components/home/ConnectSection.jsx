@@ -11,11 +11,25 @@ const ConnectSection = ({ title, subtitle, logos }) => {
     speed: 20000,
     autoplaySpeed: 0,
     cssEase: "linear",
+    slidesToShow: 5,
     arrows: false,
-    variableWidth: true,
     draggable: false,
     swipe: false,
     touchMove: false,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
@@ -37,7 +51,7 @@ const ConnectSection = ({ title, subtitle, logos }) => {
                 key={index}
                 src={logo.file.url}
                 alt={logo.title}
-                className="h-[31px] md:h-12 px-[30px] md:px-[45px] object-contain"
+                className="h-[50px] xl:h-[31px] md:h-12 px-[30px] md:px-[45px] object-contain"
               />
             ))}
           </Slider>
