@@ -24,6 +24,7 @@ const AmplifyYourCrmPage = ({ data }) => {
     <Layout>
       <Seo title="CRM Implementation" />
       <Hero
+        image={data.contentfulCrmImplementationPage.heroImage}
         title={data.contentfulCrmImplementationPage.heroTitle}
         subtitle={data.contentfulCrmImplementationPage.heroSubtitle.heroSubtitle}
         buttons={data.contentfulCrmImplementationPage.heroButtons}
@@ -139,6 +140,12 @@ const AmplifyYourCrmPage = ({ data }) => {
 export const query = graphql`
   query AmplifyYourCRMPageQuery {
     contentfulCrmImplementationPage {
+      heroImage {
+        title
+        file {
+          url
+        }
+      }
       heroTitle {
         raw
       }
