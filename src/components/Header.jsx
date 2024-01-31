@@ -50,7 +50,7 @@ const HeaderSubMenuItem = ({ item }) => {
           <div className="shadow-[0px_4px_16px_rgba(63,142,201,0.46)] w-full">
             <div className="flex pt-[14px] flex-col items-end bg-white h-full pr-[13px] gap-y-[9px] pb-[24px] bg-[url(../images/header-dropdown-background.png)] bg-bottom bg-no-repeat">
               {item.subItems.map((subItem, index) => (
-                <Link key={index} to={subItem.url} className="text-dark-blue ">
+                <Link key={index} to={subItem.url} className="text-dark-blue text-right">
                   {subItem.label}
                 </Link>
               ))}
@@ -83,7 +83,7 @@ const MobileHeaderSubMenuItem = ({ navLink }) => {
           {isSubMenuOpen && (
             <div className="flex flex-col items-end gap-y-[12px] pt-[12px]">
               {navLink.subItems.map((subItem, index) => (
-                <Link key={index} to={subItem.url} className="text-white ">
+                <Link key={index} to={subItem.url} className="text-white text-right">
                   {subItem.label}
                 </Link>
               ))}
@@ -91,7 +91,7 @@ const MobileHeaderSubMenuItem = ({ navLink }) => {
           )}
         </div>
       ) : (
-        <Link to={navLink.url} className="text-white no-underline">
+        <Link to={navLink.url} className="text-white no-underline text-right">
           {navLink.label}
         </Link>
       )}
@@ -136,7 +136,7 @@ const Header = () => {
               ) : (
                 <Link
                   to={navLink.url}
-                  className="mx-[14px] xl:mx-[18px] last:mr-0 first:ml-0 text-white no-underline relative z-30"
+                  className="mx-[14px] xl:mx-[18px] last:mr-0 first:ml-0 text-white  text-right no-underline relative z-30"
                 >
                   {navLink.label}
                 </Link>
